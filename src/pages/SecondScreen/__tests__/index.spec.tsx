@@ -2,7 +2,6 @@ import React from 'react';
 import {fireEvent, render, renderHook} from '@testing-library/react-native';
 import SecondScreen from '../index';
 import {act} from 'react-test-renderer';
-import {Color} from '../../../styles';
 import axios from 'axios';
 import {mockReturnGetAdviceData} from './__mocks__';
 import useSecondScreen from '../useSecondScreen';
@@ -10,10 +9,10 @@ import useSecondScreen from '../useSecondScreen';
 describe('../App.tsx', () => {
   it('click on the button, call the request, and show the advice on the screen ', async () => {
     //mockando a chamada da api Get para obter dados ficticios
-    jest.spyOn(axios, 'get').mockResolvedValue(mockReturnGetAdviceData);
+    jest.spyOn(axios, 'get').mockResolvedValue({data: mockReturnGetAdviceData});
 
-    // extraindo o result, para poder fazer manipulações
-    const {result} = renderHook(useSecondScreen, {});
+    // renderizando o hook
+    renderHook(useSecondScreen, {});
 
     //renderizando a tela
     const {getByTestId} = render(<SecondScreen />);

@@ -1,5 +1,3 @@
-import { TextAlignProps } from '@interfaces/commonTypesComponents';
-
 export interface LabelComponentProps {
   fontSize?: number;
   w?: number;
@@ -16,6 +14,6 @@ export interface LabelComponentProps {
   zIndex?: number;
   mr?: number;
   mb?: number;
-  textAlign?: TextAlignProps;
+  textAlign?: 'flex-start' | 'center' | 'flex-end';
   textDecorationColor?: string;
 }

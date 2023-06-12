@@ -28,7 +28,7 @@ const SecondScreen: React.FC = () => {
         onPress={() => getAdviceData()}
       />
       <Label testID="text-advice" fontSize={15} fontWeight={700} mt={40}>
-        {dataAdvice?.data.slip.advice}
+        {dataAdvice?.slip.advice}
       </Label>
     </Container>
   );
